@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write(''
+        + '<table border="1">'
+            + '<tr>'
+                + '<td colspan="2">'
+                    + '<p align="center">Información del navegador</p>'
+                + '</td>'
+            + '</tr>'
+            + '<tr>'
+                + '<td style="text-align:center">'
+                    + 'Nombre:'
+                + '</td>'
+                + '<td style="text-align:center">'
+                    + navigator.appCodeName
+                + '</td>'
+            + '</tr>'
+            + '<tr>'
+                + '<td style="text-align:center">'
+                    + 'Versión:'
+                + '</td>'
+                + '<td style="text-align:center">'
+                    + navigator.userAgent
+                + '</td>'
+            + '</tr>'
+            + '<tr>'
+                + '<td style="text-align:center">'
+                    + 'Características:'
+                + '</td>'
+                + '<td>'
+                    + '<ul>'
+                        + '<li>'
+                            + 'Cookies: ' + navigator.cookieEnabled
+                        + '</li>'
+                        + '<li>'
+                            + 'Idioma: ' + navigator.language
+                        + '</li>'
+                        + '<li>'
+                            + 'Plataforma: ' + navigator.platform
+                        + '</li>'
+                    + '</ul>'
+                + '</td>'
+            + '</tr>'
+        + '</table>');
+    </script>
+</body>
+</html>

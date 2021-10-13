@@ -1,0 +1,11 @@
+#contenido p {
+    margin-left: 300px;
+    padding-top: 100px;
+    font-size: 4em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+#imagen {
+    float:left
+}

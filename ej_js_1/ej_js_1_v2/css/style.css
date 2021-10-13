@@ -1,0 +1,7 @@
+#cabeceraTabla {
+    font-weight: bold;
+}
+
+table {
+    border: solid 2px black;
+}

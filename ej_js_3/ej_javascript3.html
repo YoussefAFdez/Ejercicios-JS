@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = parseFloat(window.prompt("Introduce el valor de A:"));
+        var b = parseFloat(window.prompt("Introduce el valor de B:"));
+        var c = parseFloat(window.prompt("Introduce el valor de C:"));
+
+        var res1 = -b + (Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+        var res2 = -b - (Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+
+        document.write(res1 + "\n" + res2);
+    </script>
+</body>
+</html>

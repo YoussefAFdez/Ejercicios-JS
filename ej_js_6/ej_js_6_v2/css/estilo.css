@@ -1,0 +1,13 @@
+#cabecera {
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    width: 50%;
+    margin: auto;
+}
+
+table td {
+    text-align: center;
+}

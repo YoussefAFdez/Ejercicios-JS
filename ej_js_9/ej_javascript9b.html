@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Elige un color para cambiar el fondo</p>
+    <button type="button" onclick="cambioFondo(0)">Rojo</button>
+    <button type="button" onclick="cambioFondo(1)">Verde</button>
+    <button type="button" onclick="cambioFondo(2)">Azul</button>
+    <button type="button" onclick="cambioFondo(3)">Amarillo</button>
+
+    <script>
+        function cambioFondo(color) {
+            colores = ['red', 'green', 'blue', 'yellow'];
+            document.bgColor=colores[color];
+        }
+    </script>
+
+</body>
+</html>

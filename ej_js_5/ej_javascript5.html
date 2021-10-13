@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = window.prompt('Introduce el numero del cual deseas hayar la tabla: ');
+        var color = window.prompt('Introduce el color que deseas de fondo en la tabla: ');
+        var tamanio = window.prompt('Introduce el tamanio de fuente que deseas (min 1, max 7): ');
+        document.write('<font size="'+ tamanio +'em">');
+        document.write('<table border="1" bgcolor="' + color + '">');
+            document.write("<tr>");
+            document.write('<td colspan="5">');
+            document.write("Tabla de multiplicar del numero " + num);
+            document.write("</td>");
+            document.write("</tr>");
+            for(i = 0; i < 10; i++) {
+                document.write("<tr>");
+                    document.write("<td>");
+                        document.write(num);
+                    document.write("</td>");
+                    document.write("<td>");
+                        document.write("x");
+                    document.write("</td>");
+                    document.write("<td>");
+                        document.write(i + 1);
+                    document.write("</td>");
+                    document.write("<td>");
+                        document.write("=");
+                    document.write("</td>");
+                    document.write("<td>");
+                        document.write(num * (i + 1));
+                    document.write("</td>");
+                document.write("</tr>");
+            }
+        document.write=("</table>");
+        document.write('</font>');
+    </script>
+</body>
+</html>
+</html>

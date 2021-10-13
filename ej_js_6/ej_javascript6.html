@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = window.prompt('Introduce el numero del cual deseas hayar la tabla: ');
+        document.write('<table border="1" width="750em">');
+            document.write("<tr>");
+            document.write('<td colspan="5" style="text-align:center">');
+            document.write("Tabla de multiplicar del numero " + num);
+            document.write("</td>");
+            document.write("</tr>");
+            for(i = 0; i < 10; i++) {
+                document.write("<tr>");
+                    document.write('<td style="text-align:center">');
+                        document.write(num);
+                    document.write("</td>");
+                    document.write('<td style="text-align:center">');
+                        document.write("x");
+                    document.write("</td>");
+                    document.write('<td style="text-align:center">');
+                        document.write(i + 1);
+                    document.write("</td>");
+                    document.write('<td style="text-align:center">');
+                        document.write("=");
+                    document.write("</td>");
+                    document.write('<td style="text-align:center">');
+                        document.write(num * (i + 1));
+                    document.write("</td>");
+                document.write("</tr>");
+            }
+        document.write=("</table>");
+    </script>
+</body>
+</html>
