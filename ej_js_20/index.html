@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detector Navegador</title>
+        <style>
+            p {
+                width: 60%;
+            }
+
+            img {
+                float: right;
+                width: 20%;
+                margin-right: 10%;
+            }
+
+            #contenido {
+                align-items: center;
+            }
+
+        </style>
+        <script>
+            var debug = true;
+            window.addEventListener('load', function() {
+                var texto = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha "
+                 + "mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga "
+                 + "antigua, rocín flaco y galgo corredor. Una olla de algo más vaque carnero, "
+                 + "salpicón las más noches, duelos y quebrantos los sábados, lantejas los "
+                 + "viernes, algún palomino de añadidura los domingos, consumíanlas tres "
+                 + "partes de su hacienda. El resto de ella concluían sayo develarte, "
+                 + "calzas de velludo para las fiestas, con sus pantuflos de lomismo, "
+                 + "y los ias de entre semana se honraba con su vellón de lo más fino."
+
+
+                 var logo = [
+                    'https://i.ibb.co/rmr8KSs/firefox.png',
+                    'https://i.ibb.co/CM2HPjB/edge.jpg',
+                    'https://i.ibb.co/7NcN72Q/opera.png',
+                    'https://i.ibb.co/Fqp4bMY/chrome.png',
+                    'https://i.ibb.co/BTDhMsF/explorer.png'
+                 ]
+                 
+                 //https://i.ibb.co/CM2HPjB/edge.jpg'
+
+                 var contenido = document.getElementById("contenido");
+
+                //Comprobamos el navegador
+                var navegador;
+
+                if (navigator.userAgent.indexOf("Firefox") != -1) {
+                    navegador = 0;
+                } else if (navigator.userAgent.indexOf("Edg") != -1) {
+                    navegador = 1;
+                } else if (navigator.userAgent.indexOf("OPR") != -1) {
+                    navegador = 2;
+                } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+                    navegador = 3;
+                } else {
+                    navegador = 4;
+                }
+
+                //console.log(navitador.userAgent);
+                switch (navegador) {
+                    case 0:
+                        contenido.innerHTML = '<img src="' + logo[0] + '"/><p>' + texto + '</p>';
+                        break;
+                    case 1:
+                        contenido.innerHTML = '<img src="' + logo[1] + '"/><p>' + texto + '</p>';
+                        break;
+                    case 2:
+                        contenido.innerHTML = '<img src="' + logo[2] + '"/><p>' + texto + '</p>';
+                        break;
+                    case 3:
+                        contenido.innerHTML = '<img src="' + logo[3] + '"/><p>' + texto + '</p>';
+                        break;
+                    case 4:
+                        contenido.innerHTML = '<img src="' + logo[4] + '"/><p>' + texto + '</p>';
+                        break;
+                }
+                
+            })
+        </script>
+    </head>
+    <body>
+        <div id="contenido">
+            
+        </div>
+    </body>
+</html>

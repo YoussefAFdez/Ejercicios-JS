@@ -28,6 +28,18 @@ function generarElementos() {
 }
 
 
+/**
+ * Detiene los intervalos, parando la rotación de imágenes y frases
+ */
+function detenerRotacion() {
+    clearInterval(intervaloFrases);
+    clearInterval(intervaloImagen);
+}
+
+
+/**
+ * Crea un array con 5 frases aleatorias que posteriormente será enviado a otra función
+ */
 function generarFrase() {
     //Definimos el array de frases
     let frases = [
@@ -63,6 +75,41 @@ function generarFrase() {
     imprime(constructorCadenaSalida(arrayAuxiliar, 0), "frases");
 }
 
+
+/**
+ * Crea un array con el nombre de 3 imágenes que posteriormente enviará para imprimirlo
+ */
+function generarImagen() {
+    //Definimos el array de imagenes
+    let imagenes = [
+        "fondo1.jpg",
+        "fondo2.jpg",
+        "fondo3.jpg",
+        "fondo4.jpg",
+        "fondo5.jpg"
+    ];
+
+    var arrayAuxiliar = new Array(3); //Array en el que almacenaremos las imagenes de salida
+
+    //Escogemos 3 imagenes aleatorias
+    for (let i = 0; i < 3; i++) {
+
+        //Comprobamos y reiniciamos el array si es necesario
+        reiniciaArray(compruebaArray(frasesValidacion), frasesValidacion);
+
+        do {
+            var num = Math.trunc(Math.random() * 5);
+        } while (imagenesValidacion[num] == 1);
+
+        arrayAuxiliar[i] = imagenes[num];
+
+        imagenesValidacion[num] = 1;
+    }
+
+    imprime(constructorCadenaSalida(arrayAuxiliar, 1), "imagenes");
+}
+
+
 /**
  * Comprueba si todos los elementos de un array han sido utilizados
  * @param {*} lista Array a comprobar
@@ -77,6 +124,7 @@ function compruebaArray(lista) {
 
     return ok;
 }
+
 
 /**
  * En caso necesario, vuelve a poner todos los valores de la lista a 0, para que puedan volver a imprimirse
@@ -93,17 +141,13 @@ function reiniciaArray(seReinicia, lista) {
 
 }
 
+
 /**
- * Imprime un array linea por linea en uno de los 2 bloques existentes
- * @param {*} lista Array que se va a imprimir
- * @param {*} lugar Indica el bloque en el que se escribira la informacion
+ * Construye la cadena final que se imprimirá
+ * @param {*} lista Array que contiene los elementos a ser impresos.
+ * @param {*} modo Indica si se debe construir una cadena de salida con la etiqueta imagen.
+ * @returns Devuelve la cadena formateada en estilo parrafo o imagen
  */
-function imprime(salida, lugar) {
-    var destino = document.getElementById(lugar);
-
-    destino.innerHTML = salida;
-}
-
 function constructorCadenaSalida(lista, modo) {
     var cadenaSalida = ""; //Contiene el codigo html a imprimir
 
@@ -120,44 +164,14 @@ function constructorCadenaSalida(lista, modo) {
     return cadenaSalida;
 }
 
-/**
- * 
- */
-function generarImagen() {
-    //Definimos el array de imagenes
-    let imagenes = [
-        "fondo1.jpg",
-        "fondo2.jpg",
-        "fondo3.jpg",
-        "fondo4.jpg",
-        "fondo5.jpg"
-    ];
-
-    var arrayAuxiliar = new Array(3); //Array en el que almacenaremos las imagenes de salida
-
-    //Escogemos 5 frases aleatorias
-    for (let i = 0; i < 3; i++) {
-
-        //Comprobamos y reiniciamos el array si es necesario
-        reiniciaArray(compruebaArray(frasesValidacion), frasesValidacion);
-
-        do {
-            var num = Math.trunc(Math.random() * 10);
-        } while (imagenesValidacion[num] == 1);
-
-        arrayAuxiliar[i] = imagenes[num];
-
-        imagenesValidacion[num] = 1;
-    }
-
-    imprime(constructorCadenaSalida(arrayAuxiliar, 1), "imagenes");
-}
-
 
 /**
- * Detiene los intervalos, parando la rotación de imágenes y frases
+ * Imprime un array linea por linea en uno de los 2 bloques existentes
+ * @param {*} lista Array que se va a imprimir
+ * @param {*} lugar Indica el bloque en el que se escribira la informacion
  */
-function detenerRotacion() {
-    clearInterval(intervaloFrases);
-    clearInterval(intervaloImagen);
+function imprime(salida, lugar) {
+    var destino = document.getElementById(lugar);
+
+    destino.innerHTML = salida;
 }
