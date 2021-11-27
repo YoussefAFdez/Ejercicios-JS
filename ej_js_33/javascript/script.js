@@ -31,7 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
             if (!validezNombre) error(nodoNombre);
             if (!validezAlias) error(nodoAlias);
             if (!validezClave) {
-                error(nodoClave);
                 error(nodoClave2);
             }
             if (!validezDdl) error(nodoDdlAnio)
@@ -59,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         break;
                 }
 
-                nodo.addEventListener('change', () => {
+                nodo.addEventListener('input', () => {
                     nodo.classList.remove("error");
                 });
             }
@@ -82,7 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
              */
             function testClave(clave1, clave2) {
                 let regex = /[\w-\.]+/i;
-                return (regex.test(clave1) && regex.test(clave2) && clave1 == clave2);
+                return (regex.test(clave2) && clave1 == clave2);
             }
 
 

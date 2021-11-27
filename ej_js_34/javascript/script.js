@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         break;
                 }
 
-                nodo.addEventListener('change', () => {
+                nodo.addEventListener('input', () => {
                     nodo.classList.remove("error");
                 });
 

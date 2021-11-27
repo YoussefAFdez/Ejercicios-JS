@@ -19,25 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
         //Cargamos el Select con valores
         nodoDdlAnio.innerHTML += cargaSelectNumeros(1990, 21);
 
-        nodoAlias.addEventListener('change', () => {
-            var valor = consultarGalleta(nodoAlias.value);
-            console.log({valor});
-            if (valor != -1) {
-                console.log('encontrado');
-                valor = valor.split(',');
-
-                //Cargamos todos los elementos
-                nodoNombre.value = valor[0];
-                nodoClave.value = valor[1];
-                nodoClave2.value = valor[1];
-                nodoListaSexo[valor[2]].checked = true;
-                nodoDdlAnio.selectedIndex = valor[3];
-                for (let i = 4, fin = valor.length; i < fin; i++) {
-                    nodoListaAficiones[valor[i]].checked = true;
-                }
-            }
-        });
-
         
         //Asignamos evento change al formulario, para ello tomamos cualquier nodo
         btnEnviar.form.addEventListener('change', () => {
@@ -61,14 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
             btnEnviar.disabled = false;
             else btnEnviar.disabled = true;
 
-            btnEnviar.addEventListener('click', () => {
-                var rbSeleccionado = document.querySelector('input[type="radio"]:checked');
-                console.log(rbSeleccionado);
-                var aficiones = cargarAficiones(nodoListaAficiones);
-                document.cookie = `${nodoAlias.value}=${nodoNombre.value},${nodoClave.value},${rbSeleccionado.value},${nodoDdlAnio.selectedIndex},${aficiones}`;
-
-            })
-
             /**
              * Modifica nodos agregándoles una clase css de error y un listener, para que cuando se realice algún cambio esta clase se elimine.
              * @param {*} nodo Nodo que se va a modificar
@@ -89,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         break;
                 }
 
-                nodo.addEventListener('input', () => {
+                nodo.addEventListener('change', () => {
                     nodo.classList.remove("error");
                 });
             }
@@ -144,33 +117,8 @@ window.addEventListener('DOMContentLoaded', () => {
             
             return salida;
         }
-
-        function cargarAficiones(lista) {
-            salida = "";
-            for (let i = 0, fin = lista.length; i < fin; i++) if (lista[i].checked) salida += i;
-
-            salida = salida.split('');
-            salida = salida.join(',');
-
-            return salida;
-        }
-
-        
-    }    
-});
-
-function consultarGalleta(clave) {
-    var busqueda = `${clave}=`;
-    if (document.cookie.length > 0) {
-        var i = document.cookie.indexOf(busqueda);
-        if (i != -1) {
-            i += busqueda.length;
-            j = document.cookie.indexOf(";", i);
-            if (j == -1) {
-                j = document.cookie.length;
-                return unescape (document.cookie.substring(i, j));
-            }
-        }
     }
-    return -1;
-}
+
+
+
+});

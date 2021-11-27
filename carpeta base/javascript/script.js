@@ -1,1 +1,0 @@
-var contenido = document.getElementById("contenido")
