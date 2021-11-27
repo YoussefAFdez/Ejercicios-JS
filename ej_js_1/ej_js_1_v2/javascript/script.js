@@ -1,20 +1,31 @@
-var contenedor = document.getElementById("contenedor")
+/*
+* Script que imprime la tabla del numero definido
+*/
 
-var numero = 8
+const numero = 7;
 
-contenedor.innerHTML+='<table id="tabla">'
-var tabla = document.getElementById("tabla") //Se crea el elemento tabla
-tabla.innerHTML+='<tr><td id="cabeceraTabla" colspan="5">Tabla de multiplicar del numero ' + numero + '</td></tr>'
+window.addEventListener('DOMContentLoaded', () => {
+    //Recogemos el contenedor
+    var contenedor = document.getElementById("contenedor");
+    //Creamos la variable que vamos a ir construyendo y definimos la tabla y cabecera
+    var salida = '<table><tr><th colspan="5">Tabla de multiplicar del numero ' + numero + '</th></tr>';
+    
+    //Generamos el resto de filas de la tabla
+    for(let i = 1; i <= 10; i++) {
+        salida +=
+        '<tr>'
+            + '<td>' + numero + '</td>'
+            + '<td>X</td>'
+            + '<td>' + i + '</td>'
+            + '<td>=</td>'
+            + '<td>' + (numero * i) +'</td>'
+        +'</tr>';
+    }
 
-for(let i = 1; i <= 10; i++) {
-    tabla.innerHTML+=
-    '<tr>'
-        + '<td>' + numero + '</td>'
-        + '<td>x</td>'
-        + '<td>' + i + '</td>'
-        + '<td>=</td>'
-        + '<td>' + (numero * i) +'</td>'
-    +'</tr>'
-}
+    //Cerramos la tabla
+    salida += '</table>'
+    //Agregamos la tabla entera 'salida' al div contenedor
+    contenedor.innerHTML += salida;
+});
 
-contenedor.innerHTML+='</table>'
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Validacion_32</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="javascript/script.js"></script>
+    </head>
+    <body>
+        <form action="" method="post">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <p>
+                    <label for="tbNombre">Nombre: </label>
+                    <input type="text" name="tbNombre" id="tbNombre">
+                </p>
+                <p>
+                    <label for="tbDireccion">Dirección: </label>
+                    <input type="text" name="tbDireccion" id="tbDireccion">
+                </p>
+                <p>
+                    <label for="tbTelefono">Teléfono: </label>
+                    <input type="text" name="tbTelefono" id="tbTelefono">
+                    <label for="tbDni">Dni: </label>
+                    <input type="text" name="tbDni" id="tbDni">
+                </p>
+                <p>
+                    <label for="tbEmail">Correo Electrónico: </label>
+                    <input type="text" name="tbEmail" id="tbEmail">
+                </p>
+                <p>
+                    <label for="tbLocalidad">Localidad: </label>
+                    <input type="text" name="tbLocalidad" id="tbLocalidad">
+                    <label for="ddlProvincia">Provincia: </label>
+                    <select name="ddlProvincia" id="ddlProvincia">
+                        <option value="-1">Seleccione un elemento de la lista</option>
+                        <option value="0">Albacete</option>
+                        <option value="1">Alicante</option>
+                        <option value="2">Almería</option>
+                        <option value="3">Álaba</option>
+                        <option value="4">Asturias</option>
+                        <option value="5">Ávila</option>
+                    </select>
+                </p>
+                <button type="submit" name="btnEnviar" id="btnEnviar">Enviar</button>
+                <button type="reset" name="btnLimpiar">Limpiar</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

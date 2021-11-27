@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ej 33</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="javascript/script.js"></script>
+    </head>
+    <body>
+        <form action="" method="post">
+            <fieldset>
+                <legend>Datos de Inscripción</legend>
+                <p>
+                    <label for="tbNombre">Nombre: </label>
+                    <input type="text" name="tbNombre" id="tbNombre"/>
+                </p>
+                <p>
+                    <label for="Alias">Alias: </label>
+                    <input type="text" name="tbAlias" id="tbAlias"/>
+                </p>
+                <p>
+                    <label for="tbClave">Contraseña: </label>
+                    <input type="text" name="tbClave" id="tbClave"/>
+                </p>
+                <p>
+                    <label for="tbClave2">Repite contraseña: </label>
+                    <input type="text" name="tbClave2" id="tbClave2"/>
+                </p>
+                <p>
+                    Sexo: 
+                    <label for="rbSexo">(M) </label>
+                    <input type="radio" name="rbSexo" id="rbSexo1"/>
+                    <label for="rbSexo">(F) </label>
+                    <input type="radio" name="rbSexo" id="rbSexo2"/>
+                    <span class="oculto error">* Debes de seleccionar un elemento</span>
+                </p>
+                <p>
+                    Año nacimiento: 
+                    <select name="ddlAnio" id="ddlAnio">
+                        <option value="-1">Selecciona fecha</option>
+                    </select>
+                    <label for="ddlAnio">(1990 - 2011)</label>
+                </p>
+                <div class="resaltado">
+                    <p>Aficiones:</p>
+                    <div class="repartir">
+                        <div>
+                            <input type="checkbox" name="cbAficiones" value="0"/>
+                            <label for="cbAficiones">Música</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="cbAficiones" value="1"/>
+                            <label for="cbAficiones">Cine</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="cbAficiones" value="2"/>
+                            <label for="cbAficiones">Lectura</label>
+                        </div>
+                    </div>
+                    <div class="repartir">
+                        <div>
+                            <input type="checkbox" name="cbAficiones" value="3"/>
+                            <label for="cbAficiones">Informática</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="cbAficiones" value="4"/>
+                            <label for="cbAficiones">Televisión</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="cbAficiones" value="5"/>
+                            <label for="cbAficiones">Videojuegos</label>
+                        </div>
+                    </div>
+                    <p class="oculto error">* Debes de seleccionar al menos un elemento</p>
+                </div>
+                <p>* Todos los campos son obligatorios</p>
+                <p>
+                    <button type="button" name="btnEnviar" id="btnEnviar">Enviar</button>
+                    <button type="reset" name="btnReset" id="btnReset">Limpiar</button>
+                </p>
+            </fieldset>
+        </form>
+    </body>
+</html>

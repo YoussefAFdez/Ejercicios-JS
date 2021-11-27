@@ -1,0 +1,20 @@
+
+
+#calculadora {
+    display: inline-block;
+    background-color: aqua;
+    margin: auto;
+}
+
+td {
+    height: 100%;
+}
+
+button {
+    height: 3em;
+    width: 100%;
+}
+
+table {
+    font-size: 2em;
+}

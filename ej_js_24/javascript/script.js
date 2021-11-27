@@ -13,7 +13,7 @@ function carga() {
     var boton = document.getElementById("btn");
     boton.addEventListener('click', function() {
         var radios = document.querySelectorAll("input[type='checkbox']:checked");
-        console.log(radios);
+        //console.log(radios);
 
         for (let i = 0, fin = radios.length; i < fin; i++) {
             var nuevaVentana = window.open(direcciones[radios[i].value]);

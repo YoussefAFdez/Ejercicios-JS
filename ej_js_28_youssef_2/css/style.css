@@ -1,0 +1,18 @@
+body {
+    background-color: lightskyblue;
+}
+
+#contenido {
+    width: 92%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#central {
+    text-align: center;
+}
+
+#central img {
+    width: 5em;
+}

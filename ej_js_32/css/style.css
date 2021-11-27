@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(202, 255, 122);
+}
+
+form {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset {
+    border: 2px solid black;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.error {
+    background-color: rgb(199, 171, 171);
+}
+
+::placeholder {
+    color: red;
+    font-weight: bold;
+}

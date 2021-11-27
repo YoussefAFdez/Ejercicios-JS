@@ -1,0 +1,86 @@
+@import "reset";
+
+$color--oscuro: #dec238;
+$color--claro: #f0e3a4;
+$color--bloque: #ffffd4;
+
+body {
+    height: 100vh;
+    background: linear-gradient($color--oscuro, $color--claro);
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    word-break: break-all;
+}
+
+.contenido {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    background-color: $color--bloque;
+    padding: 2em;
+    border-radius: 0.4em;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+
+fieldset {
+    border: 1px solid black;
+    padding: 0.5em;
+    width: 75%;
+}
+
+.columnas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colIzq {
+    width: 60%;
+}
+
+.colDcha {
+    img {
+        width: 15em;
+    }
+}
+
+.cb {
+    display: inline-block;
+    width: 30%;
+}
+
+.enunciado {
+    width: 20%;
+
+    h3 {
+        border-bottom: 1px dashed $color--oscuro;
+        padding-bottom: 0.2em;
+        margin-bottom: 1.5em;
+    }
+
+    line-height: 2em;
+}
+
+.coloreado {
+    color: $color--oscuro;
+}
