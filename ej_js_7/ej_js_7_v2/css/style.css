@@ -1,0 +1,33 @@
+body {
+    background-color: coral;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table tr {
+    border: 2px solid black;
+}
+
+table td, th {
+    padding: 0.2em 0.3em;
+}
+
+/*Definiendo el fondo de las filas*/
+
+table tr:first-child {
+    background-color: lightslategray;
+    color: white;
+}
+
+.par {
+    background-color: lightskyblue;
+}
+
+.impar {
+    background-color: limegreen;
+}
+

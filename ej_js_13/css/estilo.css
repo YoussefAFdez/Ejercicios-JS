@@ -1,3 +1,16 @@
+body {
+    background-color: coral;
+}
+
+#contenido {
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
+    
+}
+
 img {
-    width: 50%;
+    width: 30em;
+    border-radius: 1em;
 }

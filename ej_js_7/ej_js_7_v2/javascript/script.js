@@ -1,29 +1,31 @@
-//Declaracion de variables
-var num = window.prompt("Introduce el numero de la tabla: ")
-var tabla = ""
-var contenedor = document.getElementById("contenedorTabla")
+/*
+* Script que imprime la tabla del numero introducido por el usuario
+*/
 
-//Agregamos el elemento tabla y la cabecera
-tabla += '<table border="1px"><tr><td id="cabecera" colspan="5">Tabla de multiplicar del '
-+ 'numero ' + num + '</td></tr>'
+window.addEventListener('DOMContentLoaded', () => {
 
-//Generamos la tabla dinamica
-for (let i = 1; i <= 10; i++) {
-    //Comprobarmos filas impares y les asignamos una clase
-    if (i % 2 == 1) tabla += '<tr class="impar">'
-    else tabla += '<tr>'
+    var numero = window.prompt("Introduce el número del cual deseas hayar su tabla de multiplicar");
 
-    tabla += ''
-    +   '<td>' + num + '</td>'
-    +   '<td>X</td>'
-    +   '<td>' + i + '</td>'
-    +   '<td>=</td>'
-    +   '<td>' + (num * i) + '</td>'
-    + '</tr>'
-}
+    //Recogemos el contenedor
+    var contenido = document.getElementById("contenido");
+    //Creamos la variable que vamos a ir construyendo y definimos la tabla y cabecera
+    var salida = '<table><tr><th colspan="5">Tabla de multiplicar del número ' + numero + '</th></tr>';
+    
+    //Generamos el resto de filas de la tabla
+    for(let i = 1; i <= 10; i++) {
+        if (i % 2 == 0) salida += '<tr class="par">'
+        else salida += '<tr class="impar">';
 
-//Cerramos la tabla
-tabla += '</table>'
+        salida += '<td>' + numero + '</td>'
+            + '<td>X</td>'
+            + '<td>' + i + '</td>'
+            + '<td>=</td>'
+            + '<td>' + (numero * i) +'</td>'
+        +'</tr>';
+    }
 
-//Escribimos en el documento
-contenedor.innerHTML = tabla
+    //Cerramos la tabla
+    salida += '</table>'
+    //Agregamos la tabla entera 'salida' al div contenedor
+    contenido.innerHTML += salida;
+});

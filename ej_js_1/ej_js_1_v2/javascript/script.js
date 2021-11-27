@@ -1,5 +1,5 @@
 /*
-* Script que imprime la tabla del numero definido
+* Script que imprime la tabla del numero previamente definido
 */
 
 const numero = 7;

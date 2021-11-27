@@ -1,8 +1,22 @@
-//Declaracion de variables
-texto = window.prompt("Introduce una palabra o frase")
-tamanio = window.prompt("Introduce el tamaño de la letra que deseas visualizar")
-contenedor = document.getElementById("contenedor")
+/*
+ * Script que solicita 1 número y un texto a un usuario y le da al texto el tamaño de ese nuemro 
+ */
+window.addEventListener('DOMContentLoaded', () => {
+    var texto = window.prompt("Introduce una palabra o frase: ");
+    var numero = window.prompt("Introduce el tamaño de fuente de la letra: ");
 
-if (texto == null) alert("¡No has introducido texto!")
-if (!Number.isInteger(parseInt(tamanio, 10))) alert("¡No has introducido un numero valido!")
-else contenedor.innerHTML = '<p style="font-size:' + tamanio + 'em;">'+ texto +'</p>'
+    var contenido = document.getElementById("contenido");
+    if (contenido) {
+        if (texto.length == 0) alert("¡No has introducido texto!");
+        if (!Number.isInteger(parseInt(numero, 10))) alert("¡No has introducido un numero valido!")
+        else contenido.innerHTML = '<p style="font-size:' + numero + 'rem;">'+ texto +'</p>'
+    }
+
+});
+
+
+
+
+
+
+
