@@ -1,10 +1,7 @@
-window.addEventListener('load', carga);
+window.addEventListener('DOMContentLoaded', carga);
 
 function carga() {
 
-    //var radio = new URLSearchParams(window.location.search).get('radio');
-    //var listaRadios = document.getElementsByName("radio");
-    var radio = document.querySelector("input[type='radio']:checked");
     var direcciones = [
         "paginas/pagina1.html",
         "paginas/pagina2.html",
@@ -14,21 +11,15 @@ function carga() {
     ]
 
     var boton = document.getElementById("btn");
-    boton.addEventListener('click', function() {
-        //console.log("Click");
+    if (boton) boton.addEventListener('click', function() {
+      
+        //Recogemos el radio seleccionado
+        var radio = document.querySelector("input[type='radio']:checked");
+        //Comprobamos que existe dicho radio y abrimos una ventana nueva
+        if (radio) var nuevaVentana = window.open(direcciones[radio.value]);
+        else alert('No se ha encontrado una opción seleccionada');
         
-        var nuevaVentana = window.open(direcciones[radio.value]);
-        
-        /* for (let i = 0, fin = listaRadios.length; i < fin; i++) {
-            if (listaRadios[i].checked) {
-                var nuevaVentana = window.open(direcciones[i]);
-                nuevaVentana.focus;
-            }
-        } */
     })
-
-    //alert(radio);
-    //alert(typeof(radio));
     
 
 }

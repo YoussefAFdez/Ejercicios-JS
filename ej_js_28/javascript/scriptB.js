@@ -1,12 +1,14 @@
 window.addEventListener('DOMContentLoaded', function() {
     var parrafos = document.querySelectorAll('.parrafo');
-    parrafos.forEach(function(parrafo) {
-        parrafo.hidden = true;
-    })
-
-    var dias = diasRestantes(new Date('12/12/2021'), new Date('12/23/2021')) - 1;
-    //console.log(dias);
-    parrafos[dias].hidden = false;
+    if (parrafos) {
+        parrafos.forEach(function(parrafo) {
+            parrafo.hidden = true;
+        })
+    
+        var dias = diasRestantes(new Date('12/12/2021'), new Date('12/23/2021')) - 1;
+        //console.log(dias);
+        parrafos[dias].hidden = false;
+    }
 
 
 })

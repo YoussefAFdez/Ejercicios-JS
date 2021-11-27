@@ -2,7 +2,7 @@
  * Programa que recoge numeros por teclado y los imprime posteriormente resaltando el mayor y menor con colores diferentes. 
  */
 
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
     const numerosARecoger = 10;
 

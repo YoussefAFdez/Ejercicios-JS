@@ -7,6 +7,8 @@
     a repetir elementos.
 */
 
+///////EJERCICIO EXPLOTA PORQUE ENTRAN EN LA MISMA FUNCION A LA VEZ///////////
+
 
 //Declaramos los intervalos con el objetivo de poder activarlos y detenerlos cuando queramos
 var intervaloFrases;

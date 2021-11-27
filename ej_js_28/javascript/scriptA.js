@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     
-    var dias = diasRestantes(new Date(), new Date('12/23/2021'));
-
+    //var dias = diasRestantes(new Date(), new Date('12/23/2021'));
+    var dias = diasRestantes(new Date('12/23/2021'));
     //Calculamos el número en las distintas posiciones
     var decenas = Math.trunc(dias / 10);
     var unidades = dias % 10;
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function() {
  * @param {*} fechaFinal Objeto tipo Date con la fecha de fin deseada
  * @returns Devuelve un entero la diferencia de días entre la fecha posterior y la anterior
  */
-function diasRestantes(fechaIni, fechaFinal) {
+function diasRestantes(fechaFinal, fechaIni = new Date()) {
 
     //Cálculo de días
     var diferenciaMS = fechaFinal.getTime() - fechaIni.getTime();
@@ -34,7 +34,7 @@ function diasRestantes(fechaIni, fechaFinal) {
 function modificaImagenes(decenas, unidades) {
     
     //Declaramos el array de imagenes
-    imagenes = [
+    const imagenes = [
         "img/0.png",
         "img/1.png",
         "img/2.png",
@@ -48,8 +48,8 @@ function modificaImagenes(decenas, unidades) {
     ];
 
     //Recogemos los distintos nodos de imagen
-    imgDecenas = document.getElementById("decenas");
-    imgUnidades = document.getElementById("unidades");
+    var imgDecenas = document.getElementById("decenas");
+    var imgUnidades = document.getElementById("unidades");
 
     imgDecenas.src = imagenes[decenas];
     imgUnidades.src = imagenes[unidades];

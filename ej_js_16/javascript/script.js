@@ -2,6 +2,12 @@
     Se pide una cadena y se recuentan vocales y consonatnes.
 */
 
+window.addEventListener('DOMContentLoaded', () => {
+    //Obtenemos el boton
+    let btnContar = document.getElementById("btnContar");
+    if (btnContar) btnContar.addEventListener('click', () => { alert(cuentaLetras()) });
+});
+
 /*
 * Cuenta las vocales y consonantes que hay en una cadena
 * No recibe parametros, los datos se toman dentro
@@ -11,12 +17,11 @@ function cuentaLetras() {
     //Tomamos la frase del usuario
     let frase = window.prompt("Introduce la frase que deseas contar: ");
 
-    //Declaramos las vocales existentes
-    let vocales = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
-
     //Declaramos las expresiones regulares
-    let regexVocales = new RegExp('[' + vocales + ']');
-    let regexConsonantes = new RegExp('[a-zA-Z]');
+    let regexVocales = /[aeiouAEIOUáéíóúÁÉÍÓÚ]/;
+    let regexConsonantes = /[a-z]/i;
+    //let regexVocales = new RegExp('[' + vocales + ']');
+    //let regexConsonantes = new RegExp('[a-zA-Z]');
 
     //Declaramos los contadores
     let contadorVocales = 0;

@@ -1,4 +1,4 @@
-window.addEventListener('load', principal)
+window.addEventListener('DOMContentLoaded', principal)
 
 function principal() {
     console.log("Iniciado");

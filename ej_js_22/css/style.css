@@ -1,3 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;;
+}
+
+li {
+    padding-block: 1em;
+}
+
 .resaltado {
     background-color: lightblue;
     color: yellow;

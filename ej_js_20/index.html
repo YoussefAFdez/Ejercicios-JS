@@ -23,7 +23,7 @@
         </style>
         <script>
             var debug = true;
-            window.addEventListener('load', function() {
+            window.addEventListener('DOMContentLoaded', function() {
                 var texto = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha "
                  + "mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga "
                  + "antigua, rocín flaco y galgo corredor. Una olla de algo más vaque carnero, "
@@ -31,20 +31,20 @@
                  + "viernes, algún palomino de añadidura los domingos, consumíanlas tres "
                  + "partes de su hacienda. El resto de ella concluían sayo develarte, "
                  + "calzas de velludo para las fiestas, con sus pantuflos de lomismo, "
-                 + "y los ias de entre semana se honraba con su vellón de lo más fino."
+                 + "y los ias de entre semana se honraba con su vellón de lo más fino.";
 
 
-                 var logo = [
+                var logo = [
                     'https://i.ibb.co/rmr8KSs/firefox.png',
                     'https://i.ibb.co/CM2HPjB/edge.jpg',
                     'https://i.ibb.co/7NcN72Q/opera.png',
                     'https://i.ibb.co/Fqp4bMY/chrome.png',
                     'https://i.ibb.co/BTDhMsF/explorer.png'
-                 ]
+                ];
                  
-                 //https://i.ibb.co/CM2HPjB/edge.jpg'
+                //https://i.ibb.co/CM2HPjB/edge.jpg'
 
-                 var contenido = document.getElementById("contenido");
+                var contenido = document.getElementById("contenido");
 
                 //Comprobamos el navegador
                 var navegador;

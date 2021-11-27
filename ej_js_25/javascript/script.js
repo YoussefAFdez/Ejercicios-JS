@@ -1,4 +1,4 @@
-window.addEventListener('load', carga);
+window.addEventListener('DOMContentLoaded', carga);
 
 function carga() {
 
@@ -11,14 +11,17 @@ function carga() {
     ]
     
     var boton = document.getElementById("btn");
-    boton.addEventListener('click', function() {
+    if (boton) boton.addEventListener('click', function() {
         var opciones = document.querySelectorAll("option:checked");
         //console.log(opciones);
 
-        for (let i = 0, fin = opciones.length; i < fin; i++) {
-            var nuevaVentana = window.open(direcciones[opciones[i].value]);
+        if (opciones) {
+            for (let i = 0, fin = opciones.length; i < fin; i++) {
+                var nuevaVentana = window.open(direcciones[opciones[i].value]);
+            }
         }
+        
         window.focus();
-    })
+    });
 
 }

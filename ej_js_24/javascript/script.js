@@ -1,4 +1,4 @@
-window.addEventListener('load', carga);
+window.addEventListener('DOMContentLoaded', carga);
 
 function carga() {
 
@@ -11,12 +11,13 @@ function carga() {
     ]
     
     var boton = document.getElementById("btn");
-    boton.addEventListener('click', function() {
-        var radios = document.querySelectorAll("input[type='checkbox']:checked");
-        //console.log(radios);
+    if (boton) boton.addEventListener('click', function() {
+        var listaCb = document.querySelectorAll("input[type='checkbox']:checked");
 
-        for (let i = 0, fin = radios.length; i < fin; i++) {
-            var nuevaVentana = window.open(direcciones[radios[i].value]);
+        if (listaCb) {
+            for (let i = 0, fin = listaCb.length; i < fin; i++) {
+                var nuevaVentana = window.open(direcciones[listaCb[i].value]);
+            }
         }
         window.focus();
     })
