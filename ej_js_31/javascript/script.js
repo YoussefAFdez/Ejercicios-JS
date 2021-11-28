@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var nodoResultado = document.getElementById("resultado");
     var nodoVidas = document.getElementById("vidas");
     var nodoLetras = document.getElementById("letrasUsadas");
-    var vidas = 8;
+    var vidas = 0;
     var letrasUsadas = "";
 
     //Comprobamos que existan todos los nodos 
@@ -23,14 +23,14 @@ window.addEventListener('DOMContentLoaded', function() {
         var palabraABuscar = generaPalabra(listaPalabras);
         var palabraJugador = generaPalabraJugador(palabraABuscar);
         nodoResultado.textContent = palabraJugador.join(' ');
-        nodoVidas.textContent = vidas;
+        nodoVidas.textContent = 7 - vidas;
 
         btnComprobar.addEventListener('click', () => {
             var letra = nodoTbEntrada.value;
             if (letra.length) {
                 comprobacion(letra);
                 actualizacion();
-                if (!vidas) {
+                if (vidas == 7) {
                     alert(`Has perdido... La palabra que buscabas era ${palabraABuscar}`);
                     window.location.reload();
                 }
@@ -54,13 +54,16 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 }
-            } else vidas--;
+            } else {
+                vidas++;
+                nodoImagen.src = `img/${vidas}.png`;
+            }
         } else alert('Ya has escrito esa letra!');
     }
 
     function actualizacion() {
         nodoResultado.textContent = palabraJugador.join(' ');
-        nodoVidas.textContent = vidas;
+        nodoVidas.textContent = 7 - vidas;
         nodoLetras.textContent = letrasUsadas;
         nodoTbEntrada.value = "";
     }
